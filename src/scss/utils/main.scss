@@ -1,0 +1,18 @@
+@import 'utils/vars';
+@import 'utils/fonts';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+};
+
+html {
+  font-family: $fontMain;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

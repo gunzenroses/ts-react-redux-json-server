@@ -1,0 +1,17 @@
+@import 'utils/vars.scss';
+
+.container {
+  display: table;
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  background: $colorBackground;
+}
+
+.message {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: $fontSizeTitle;
+  text-align: center;
+  color: $colorTextLight;
+}

@@ -1,0 +1,35 @@
+@import 'utils/vars.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+}
+
+.real {
+  visibility: hidden;
+
+  &:checked ~ .fake::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 6px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-right: 2px solid $colorLight;
+    border-bottom: 2px solid $colorLight;
+  }
+}
+
+.fake {
+  width: 18px;
+  height: 18px;
+  background: $colorBackground;
+}
+
+.title {
+  margin-left: 7px;
+  font-size: 1rem;
+  color: $colorTextLight;
+}
