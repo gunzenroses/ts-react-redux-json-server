@@ -1,0 +1,53 @@
+@import 'utils/vars.scss';
+@import 'scss/templates.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 300px;
+}
+
+.title {
+  @extend %title-text;
+
+  &_dark {
+    color: $colorTextLight;
+  }
+
+  &_light {
+    color: $colorDark;
+  }
+}
+
+.subtitle {
+  @extend %subtitle-text;
+
+  &_dark {
+    color: $colorTextLight;
+  }
+
+  &_light {
+    color: $colorDark;
+  }
+}
+
+.link {
+  @extend %link-text;
+
+  &_dark {
+    color: $colorLight;
+
+    &:hover {
+      color: $colorLightLess;
+    }
+  }
+
+  &_light {
+    color: $colorDark;
+
+    &:hover {
+      color: $colorDarkLess;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@import '../../scss/utils//vars.scss';
+@import 'utils//vars.scss';
 
 .input {
   display: block;
@@ -9,10 +9,11 @@
   padding: 12px 18px;
   line-height: 45px;
   border-radius: 10px;
+  border: none;
   color: $colorTextLight;
-  background-color: $colorDark;
+  background-color: $colorDarkLess;
 
-  & + & {
-    margin-top: 32px;
+  &:active {
+    border: 1px solid $colorImportant;
   }
 }

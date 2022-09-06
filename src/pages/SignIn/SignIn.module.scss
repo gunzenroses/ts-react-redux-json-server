@@ -1,8 +1,21 @@
 @import 'utils/vars.scss';
 
 .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   min-width: 320px;
   height: 100%;
-  background: $colorBackground;
+  padding-top: 72px;
+  padding-bottom: 61px;
+  
+  &_dark {
+    background: $colorDark;
+  }
+
+  &_light {
+    background: $colorTextLight;
+  }
 }

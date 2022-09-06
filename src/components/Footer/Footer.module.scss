@@ -1,0 +1,42 @@
+@import 'utils/vars.scss';
+
+.container {
+  width: 100%;
+  min-width: 320px;;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &_dark {
+    background-color: $colorDark;
+    background-image: url('../../assets/images/footer.png');
+  }
+
+  &_light {
+    background-color: $colorTextLight;
+    background-image: url('../../assets//images/footer-light.png');
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 172px;
+  height: 42px;
+  color: $colorLight;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text {
+  width: 130px;
+  font-family: $fontMain;
+  font-size: $fontSizeMain;
+  text-align: center;
+  color: $colorTextLight;
+}

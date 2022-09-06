@@ -1,0 +1,46 @@
+@import 'utils/vars.scss';
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  border-radius: 10px;
+  font-family: $fontMain;
+  font-size: $fontSizeMain;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &_dark {
+    color: $colorTextLight;
+    background-color: $colorDark;
+
+    &:hover,
+    &:active {
+      background-color: $colorDarkLess;
+    }
+  }
+
+  &_light {
+    color: $colorDark;
+    background-color: $colorLight;
+
+    &:hover,
+    &:active {
+      background-color: $colorLightLess;
+    }
+  }
+
+  &_small {
+    width: fit-content;
+    height: 36px;
+    line-height: 36px;
+  }
+
+  &_large {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+  }
+}

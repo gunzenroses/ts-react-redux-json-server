@@ -4,8 +4,9 @@
   display: table;
   width: 100%;
   min-width: 320px;
-  height: 100%;
-  background: $colorBackground;
+  height: calc(100vh - 170px);
+  min-height: 300px;
+  background: $colorDark;
 }
 
 .message {

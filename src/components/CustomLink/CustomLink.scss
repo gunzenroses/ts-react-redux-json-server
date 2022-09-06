@@ -1,0 +1,26 @@
+@import 'utils/vars.scss';
+
+.CustomLink {
+  font-family: $fontSecondary;
+  font-size: $fontSizeMain;
+  text-transform: uppercase;
+  padding-right: 50px;
+
+  &_dark {
+    color: $colorDark;
+
+    &:hover,
+    &:active {
+      color: $colorDarkLess;
+    }
+  }
+
+  &_light {
+    color: $colorLight;
+
+    &:hover,
+    &:active {
+      color: $colorLightLess;
+    }
+  }
+}

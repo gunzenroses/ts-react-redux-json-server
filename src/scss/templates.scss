@@ -1,0 +1,25 @@
+@import 'utils/vars.scss';
+
+%title-text {
+  margin: 0;
+  font-family: $fontMain;
+  font-size: 64px;
+  text-align: center;
+  user-select: none;
+}
+
+%subtitle-text {
+  margin: 0;
+  font-family: $fontSecondary;
+  font-size: $fontSizeMain;
+  text-align: center;
+  user-select: none;
+}
+
+%link-text {
+  text-align: center;
+  font-family: $fontSecondary;
+  font-size: $fontSizeMain;
+  text-decoration: none;
+  cursor: pointer;
+}
