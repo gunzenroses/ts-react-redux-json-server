@@ -20,7 +20,7 @@ const Footer = () => {
           'container_light': theme === 'light'
         }
       )}>
-      <a href='https/github.com' target='_blank' rel="noopener noreferrer" className={styles.link}>
+      <a href='//github.com' target='_blank' rel="noopener noreferrer" className={styles.link}>
         <ButtonIcon imgSrc={github} />
         <p className={styles.text}>Check out other projects</p>
       </a>

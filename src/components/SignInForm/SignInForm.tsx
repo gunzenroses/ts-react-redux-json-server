@@ -20,7 +20,6 @@ type Props = {
 };
 
 const SignInForm: FC<Props> = ({ theme, handleOnSubmit }) => {
-  console.log(styles.title_light);
 
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');

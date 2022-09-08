@@ -32,7 +32,7 @@ const UserMenu: FC<Props> = ({
           <Button 
             text='Sign in' 
             theme={theme} 
-            href='./sign-in' 
+            href='/' 
             type='link' 
           />
         </>

@@ -5,8 +5,17 @@
   width: 100%;
   min-width: 320px;
   height: calc(100vh - 170px);
-  min-height: 300px;
-  background: $colorDark;
+  min-height: 350px;
+
+  &_light {
+    color: $colorDark;
+    background-color: $colorTextLight;
+  }
+
+  &_dark {
+    color: $colorTextLight;
+    background-color: $colorDark;
+  }
 }
 
 .message {
@@ -14,5 +23,5 @@
   vertical-align: middle;
   font-size: $fontSizeTitle;
   text-align: center;
-  color: $colorTextLight;
+  color: inherit;
 }

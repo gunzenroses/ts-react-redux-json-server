@@ -12,10 +12,10 @@ function App() {
       <BrowserRouter>
         <main className={styles.main}>
           <Routes>
-            <Route index element={< SignIn />} />
-            <Route path='/register' element={ <Registration />} />
-            <Route path='/contacts' element={ <Contacts />} />
-            <Route path='*' element={ <Page404 />} />
+            <Route index element={<SignIn />} />
+            <Route path='/registration' element={<Registration />} />
+            <Route path='/contacts' element={<Contacts />} />
+            <Route path='*' element={<Page404 />} />
           </Routes>
         </main>
       </BrowserRouter>
@@ -25,4 +25,5 @@ function App() {
 }
 
 export default App;
+
 

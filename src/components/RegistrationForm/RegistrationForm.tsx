@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 import classNames from 'classnames/bind';
 
 import { useTheme } from 'src/store/utils/hooks';
@@ -9,8 +9,11 @@ import { Link } from 'react-router-dom';
 
 const cn = classNames.bind(styles);
 
-const RegistrationForm = () => {
-  const theme: string = useTheme();
+type Props = {
+  theme: string;
+}
+
+const RegistrationForm: FC<Props> = ({ theme }) => {
 
   const [email, setEmail] = useState('');
 
@@ -30,8 +33,8 @@ const RegistrationForm = () => {
     <form className={styles.container}>
       <h1
         className={cn('title', {
-          title_light: theme === 'light',
-          title_dark: theme === 'dark',
+          'title_light': theme === 'light',
+          'title_dark': theme === 'dark',
         })}
       >
         Registration
@@ -54,22 +57,24 @@ const RegistrationForm = () => {
           throw new Error('Function not implemented.');
         }}
       />
-      <Button type='submit' theme='light' text='Submit' />
+      <div className={styles.button}>
+        <Button type='submit' theme='light' text='Submit' />
+      </div>
       <p
         className={cn('subtitle', {
-          subtititle_light: theme === 'light',
-          subtitle_dark: theme === 'dark',
+          'subtitle_light': theme === 'light',
+          'subtitle_dark': theme === 'dark',
         })}
       >
         Already have an account?
         <Link
-          to='./signin'
+          to='/'
           className={cn('link', {
-            link_light: theme === 'light',
-            link_dark: theme === 'dark',
+            'link_light': theme === 'light',
+            'link_dark': theme === 'dark',
           })}
         >
-          Registration
+          Sign in
         </Link>
       </p>
     </form>
