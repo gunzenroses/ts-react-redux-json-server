@@ -6,3 +6,17 @@ declare module '*.png' {
 }
 
 type Theme = 'dark' | 'light';
+
+type AuthInfo = {
+  id: string;
+  email: string;
+}
+
+type UserInfo = {
+  email: string;
+  password: string;
+};
+
+type User = UserInfo & {
+  id: string
+}

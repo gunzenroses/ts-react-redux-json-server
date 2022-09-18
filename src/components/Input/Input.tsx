@@ -1,35 +1,26 @@
-import React, { ChangeEvent, FC } from 'react';
+import React, { forwardRef } from 'react';
 import styles from './Input.module.scss';
 
 type Props = {
   name: string;
   type?: string;
   placeholder?: string;
-  value?: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input: FC<Props> = ({
-  name,
+const Input = forwardRef<HTMLInputElement, Props>(({
   type = 'text',
   placeholder = '',
-  value = '',
-  onChange,
-}) => {
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    onChange(e);
-  };
+}, ref) => {
 
   return (
     <input
+      ref={ref}
       className={styles.input}
       type={type}
-      name={name}
-      value={value}
       placeholder={placeholder}
-      onChange={handleInputChange}
+      autoComplete='new-password'
     ></input>
   );
-};
+});
 
 export { Input };

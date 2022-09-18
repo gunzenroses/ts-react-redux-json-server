@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "john.doe@gmail.com",
+      "password": "123John"
+    },
+    {
+      "id": 2,
+      "email": "mary.doe@gmail.com",
+      "password": "123Mary"
+    },
+    {
+      "id": 3,
+      "email": "sarah.doe@gmail.com",
+      "password": "Sarah123"
+    },
+    {
+      "id": 4,
+      "email": "lilly.doe@gmail.com",
+      "password": "Lilly@Doe1"
+    },
+    {
+      "email": "helicopter@mail.com",
+      "password": "helicopter123@",
+      "id": 5
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "list": [
+        "Mary Doe",
+        "Sarah Doe"
+      ]
+    },
+    {
+      "id": 2,
+      "list": [
+        "John Doe",
+        "Sarah Doe"
+      ]
+    },
+    {
+      "id": 3,
+      "list": [
+        "Mary Doe",
+        "John Doe"
+      ]
+    }
+  ]
+}

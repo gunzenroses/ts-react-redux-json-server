@@ -51,3 +51,11 @@
     }
   }
 }
+
+.input {
+  @extend %input;
+
+  &:active {
+    border: 1px solid $colorImportant;
+  }
+}

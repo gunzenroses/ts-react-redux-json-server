@@ -22,7 +22,7 @@ const SignIn = () => {
         'container_light': theme === 'light'
       }
     )}>
-      <SignInForm handleOnSubmit={ handleSubmit } theme={theme}/>
+      <SignInForm theme={theme}/>
     </div>
   );
 }

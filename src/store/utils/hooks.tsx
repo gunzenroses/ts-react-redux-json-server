@@ -10,3 +10,8 @@ export const useTheme = () => {
   const theme = useMySelector((state: MyState) => state.theme);
   return theme;
 }
+
+export const useAuth = () => {
+  const isAuth = useMySelector((state: MyState) => state.isAuth);
+  return isAuth;
+}

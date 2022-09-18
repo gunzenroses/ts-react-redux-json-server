@@ -1,0 +1,15 @@
+@import 'utils/vars.scss';
+
+.container {
+  width: 100%;
+  font-family: 'Inter';
+  font-size: 14px;
+
+  &_light {
+    color: $colorErrorDark;
+  }
+
+  &_dark {
+    color: $colorErrorLight;
+  }
+}

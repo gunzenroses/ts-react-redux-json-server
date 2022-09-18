@@ -4,7 +4,7 @@
   display: table;
   width: 100%;
   min-width: 320px;
-  height: calc(100vh - 170px);
+  height: calc(100vh - $heightHeader - $heightFooter);
   min-height: 350px;
 
   &_light {
