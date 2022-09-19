@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { MyState } from '../utils/types';
 
-const initialState: Theme = 'dark';
+const initialState: string = window.sessionStorage.getItem('theme') || 'dark';
 
 const themeSlice = createSlice({
   name: 'theme',
   initialState,
   reducers: {
     changeTheme: (state, action) => {
+      window.sessionStorage.setItem('theme', action.payload);
       return action.payload;
-    },
+    }
   },
 });
 

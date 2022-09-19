@@ -12,10 +12,12 @@
   padding-bottom: 47px;
 
   &_light {
+    color: $colorDark;
     background-color: $colorTextLight;
   }
 
   &_dark {
+    color: $colorTextLight;
     background-color: $colorDark;
   }
 }

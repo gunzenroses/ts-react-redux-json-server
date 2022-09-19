@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
 import './CustomLink.scss';
 
@@ -13,9 +12,9 @@ const CustomLink: FC<Props> = ({
   text 
 }) => {
   return (
-    <Link to='./contacts' className={`CustomLink CustomLink_${theme}`}>
+    <a href='/' className={`CustomLink CustomLink_${theme}`}>
       {text}
-    </Link>
+    </a>
   );
 }
 

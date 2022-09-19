@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import authSlice from './slices/authSlice';
+import userSlice from './slices/userSlice';
+import contactsSlice from './slices/contactsSlice';
 import themeSlice from './slices/themeSlice';
 
 const MyStore = configureStore({
   reducer: {
     theme: themeSlice,
-    isAuth: authSlice
+    user: userSlice,
+    contacts: contactsSlice
   },
 });
 

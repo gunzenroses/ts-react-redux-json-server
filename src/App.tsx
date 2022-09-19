@@ -1,23 +1,23 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { Contacts, Registration, SignIn, Page404 } from './pages';
+import { Header, Footer } from 'components';
 
 import styles from './App.module.scss';
-import { Header, Footer } from 'components';
 
 function App() {
   return (
     <>
-      <Header isAuth={false} />
       <BrowserRouter>
+        <Header />
         <main className={styles.main}>
           <Routes>
-            <Route index element={<SignIn />} />
+            <Route index element={<Contacts />} />
             <Route path='/registration' element={<Registration />} />
-            <Route path='/contacts' element={<Contacts />} />
+            <Route path='/sign-in' element={<SignIn />} />
             <Route path='*' element={<Page404 />} />
           </Routes>
-        </main>
+        </main> 
       </BrowserRouter>
       <Footer />
     </>
@@ -25,5 +25,8 @@ function App() {
 }
 
 export default App;
+
+
+
 
 

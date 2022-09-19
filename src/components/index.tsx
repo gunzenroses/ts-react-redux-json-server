@@ -5,3 +5,4 @@ export { CustomErrorMessage } from './CustomErrorMessage/CustomErrorMessage';
 export { SignInForm } from "./SignInForm/SignInForm";
 export { Header } from './Header/Header';
 export { Footer } from './Footer/Footer';
+export { TextInfo } from './TextInfo/TextInfo';

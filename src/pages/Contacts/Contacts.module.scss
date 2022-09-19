@@ -3,15 +3,13 @@
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   min-width: 320px;
   height: calc(100vh - $heightHeader - $heightFooter);
   min-height: 600px;
-  padding-top: 72px;
-  padding-bottom: 61px;
-  
+
   &_light {
     color: $colorDark;
     background-color: $colorTextLight;

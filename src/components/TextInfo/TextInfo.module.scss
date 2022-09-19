@@ -1,0 +1,9 @@
+@import 'utils/vars.scss';
+
+.message {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: $fontSizeTitle;
+  text-align: center;
+  color: inherit;
+}

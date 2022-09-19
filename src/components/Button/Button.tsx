@@ -9,33 +9,28 @@ const cn = classNames.bind(styles);
 type Props = {
   theme: string;
   text: string;
-  type: 'submit' | 'link';
+  type: 'submit' | 'button';
   href?: string;
+  onPointerUp?: () => void;
 };
 
-const Button: FC<Props> = ({
-  theme,
-  text,
-  type,
-  href
-}) => {
-
+const Button: FC<Props> = ({ theme, text, type, href, onPointerUp }) => {
   const buttonClass = cn('container', {
-    'container_light': theme === 'light',
-    'container_dark': theme === 'dark',
-    'container_small': type === 'link',
-    'container_large': type === 'submit'
-  })
+    container_light: theme === 'light',
+    container_dark: theme === 'dark',
+    container_small: type === 'button',
+    container_large: type === 'submit',
+  });
 
   return href ? (
-    <a href={href} className={buttonClass} >
+    <a href={href} className={buttonClass}>
       {text}
     </a>
   ) : (
-    <button type='submit' className={buttonClass}>
+    <button type={type} className={buttonClass} onPointerUp={onPointerUp}>
       {text}
     </button>
   );
-}
+};
 
 export { Button };

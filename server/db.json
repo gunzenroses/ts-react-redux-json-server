@@ -29,24 +29,23 @@
   "contacts": [
     {
       "id": 1,
-      "list": [
-        "Mary Doe",
-        "Sarah Doe"
-      ]
+      "list": ["Mary Doe", "Sarah Doe"]
     },
     {
       "id": 2,
-      "list": [
-        "John Doe",
-        "Sarah Doe"
-      ]
+      "list": ["John Doe", "Sarah Doe"]
     },
     {
       "id": 3,
-      "list": [
-        "Mary Doe",
-        "John Doe"
-      ]
+      "list": ["Mary Doe", "John Doe"]
+    },
+    {
+      "id": 4,
+      "list": ["Mary Doe", "John Doe"]
+    },
+    {
+      "id": 5,
+      "list": ["Mary Doe", "John Doe"]
     }
   ]
 }

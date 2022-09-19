@@ -3,7 +3,9 @@
 .CustomLink {
   font-family: $fontSecondary;
   font-size: $fontSizeMain;
+  font-weight: 700;
   text-transform: uppercase;
+  text-decoration: none;
   padding-right: 50px;
 
   &_dark {

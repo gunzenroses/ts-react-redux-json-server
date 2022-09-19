@@ -39,7 +39,7 @@ const SignInForm: FC<Props> = ({ theme }) => {
         alert(response.payload);
       } else {
         alert("Congratulations! You've successfully logged in!");
-        navigate('/contacts', { replace: true });
+        navigate('/', { replace: true });
       }
     })
     .then(() => {

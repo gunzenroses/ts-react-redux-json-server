@@ -36,7 +36,7 @@ const RegistrationForm: FC<Props> = ({ theme }) => {
           alert(response.payload)
         } else {
           alert("Congratulations! You've successfully registered!");
-          navigate('/contacts', { replace: true });
+          navigate('/', { replace: true });
         }
       })
       .then(() => {
@@ -113,7 +113,7 @@ const RegistrationForm: FC<Props> = ({ theme }) => {
       >
         Already have an account?
         <Link
-          to='/'
+          to='/sign-in'
           className={cn('link', {
             link_light: theme === 'light',
             link_dark: theme === 'dark',

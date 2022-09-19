@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind';
+
 import { useTheme } from 'src/store/utils/hooks';
+import { TextInfo } from 'components';
 
 import styles from './Page404.module.scss';
 
@@ -13,7 +15,7 @@ const Page404 = () => {
       'container_light': theme === 'light',
       'container_dark': theme === 'dark'
     })}>
-      <p className={styles.message}>Oops, there is no such page</p>
+      <TextInfo text='Oops, there is no such page' />
     </div>
   )
 };

@@ -20,3 +20,8 @@ type UserInfo = {
 type User = UserInfo & {
   id: string
 }
+
+type Contact = {
+  id: string;
+  list: string[];
+}

@@ -1,5 +1,5 @@
-import { SignInForm } from 'components';
-import { useTheme } from 'src/store/utils/hooks';
+import { SignInForm, TextInfo } from 'components';
+import { useAuth, useTheme } from 'src/store/utils/hooks';
 
 import classNames from 'classnames/bind';
 
@@ -9,20 +9,20 @@ const cn = classNames.bind(styles);
 
 const SignIn = () => {
   const theme: string = useTheme();
-
-  const handleSubmit = ({ email, password }: { email: string, password: string}) => {
-    
-  }
+  const isAuth: boolean = !!useAuth().id;
 
   return (
-    <div className={cn(
-      'container',
-      {
-        'container_dark': theme === 'dark',
-        'container_light': theme === 'light'
-      }
-    )}>
-      <SignInForm theme={theme}/>
+    <div
+      className={cn('container', {
+        container_dark: theme === 'dark',
+        container_light: theme === 'light',
+      })}
+    >
+      {isAuth ? (
+        <TextInfo text={'You\'re already logged in, you can check your contacts or sign out'} />
+      ) : (
+        <SignInForm theme={theme} />
+      )}
     </div>
   );
 }

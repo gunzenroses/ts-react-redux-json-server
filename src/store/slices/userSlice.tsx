@@ -1,26 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { copyFile } from "fs";
 
-import { createUser, authUser, deleteUser } from '../thunks/usersThunk';
+import { createUser, signOut, authUser, deleteUser } from '../thunks/usersThunk';
 
-const initialState = {
-  id: '',
-  email: ''
-}
+const authInfo = window.sessionStorage.getItem('authInfo');
 
-const authSlice = createSlice({
-  name: 'auth',
+const initialState = authInfo ? JSON.parse(authInfo) as AuthInfo : { id: '', email: '' };
+
+const userSlice = createSlice({
+  name: 'user',
   initialState,
-  reducers: {
-    setUser(state, action) {
-      state.id = action.payload.id;
-      state.email = action.payload.email;
-    },
-    removeUser(state, action) {
-      state.id = action.payload.id;
-      state.email = action.payload.email;
-    }
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(createUser.fulfilled, (state, action) => {
@@ -28,7 +17,7 @@ const authSlice = createSlice({
         state.email = action.payload.email;
       })
       .addCase(createUser.rejected, (state) => {
-        state.id = ''; 
+        state.id = '';
         state.email = '';
       })
       .addCase(authUser.fulfilled, (state, action) => {
@@ -39,13 +28,19 @@ const authSlice = createSlice({
         state.id = '';
         state.email = '';
       })
-      .addCase(deleteUser.fulfilled, (state) => {
+      .addCase(signOut.fulfilled, (state) => {
         state.id = '';
         state.email = '';
       })
+      .addCase(signOut.rejected, (state) => {
+        state.id = '';
+        state.email = '';
+      })
+      .addCase(deleteUser.fulfilled, (state) => {
+        state.id = '';
+        state.email = '';
+      });
   },
 });
 
-export const { setUser, removeUser } = authSlice.actions;
-
-export default authSlice.reducer;
+export default userSlice.reducer;

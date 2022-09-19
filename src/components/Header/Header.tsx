@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import classNames from 'classnames/bind';
 
 import { useMyDispatch, useTheme } from 'src/store/utils/hooks';
@@ -12,13 +10,8 @@ import styles from './Header.module.scss';
 
 const cn = classNames.bind(styles);
 
-type Props = {
-  isAuth: boolean;
-}
 
-const Header: FC<Props> = ({ 
-  isAuth
-}) => {
+const Header = () => {
   const theme: string = useTheme();
 
   const dispatch = useMyDispatch();
@@ -41,7 +34,7 @@ const Header: FC<Props> = ({
     >
       <ButtonIcon imgSrc={switcher} onClick={handleClick}/>
       <nav className={styles.navigation}>
-        <UserMenu isAuth={isAuth} theme={theme} />
+        <UserMenu theme={theme} />
       </nav>
     </header>
   );
