@@ -3,6 +3,7 @@
 $heightBlock: 70px;
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -62,4 +63,15 @@ $heightBlock: 70px;
   &:active {
     background-color: $colorImportantLight;
   }
+}
+
+.autocomplete {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  height: 40px;
+  width: 100%;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  right: 0;
 }

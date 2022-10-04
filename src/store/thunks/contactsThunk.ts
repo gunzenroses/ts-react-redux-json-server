@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import Contacts from 'src/api/apiContacts';
+import ApiUsers from "src/api/apiUsers";
 
 const getContacts = createAsyncThunk(
   'contacts/getContacts',
@@ -31,4 +32,38 @@ const deleteContact = createAsyncThunk(
   }
 );
 
-export { getContacts, deleteContact };
+const findContacts = createAsyncThunk(
+  'contacts/findContacts',
+  async(data: {id: string, email: string}, { rejectWithValue }) => {
+    const listOfUsers = await new ApiUsers().findUsers(data);
+    if (listOfUsers === false) {
+      return rejectWithValue('No contact with such email found')
+    } else {
+      return listOfUsers;
+    }
+  }
+)
+
+const addContact = createAsyncThunk(
+  'user/addContact',
+  async (data: { id: string, email: string }, { rejectWithValue }) => {
+    const {id, email} = data;
+    const user = await new ApiUsers().checkEmail(email);
+    if (!!user) {
+      const contactName = `${user.name} ${user.surname}`;
+      const contacts = await new Contacts().getContacts(id);
+      const contactExists = contacts.find(contact => contact === contactName);
+      if (!!contactExists) {
+        return rejectWithValue('Already in a contact list');
+      } else {
+        const newContacts = await new Contacts().addContact({id: id, contactName: contactName});
+        window.sessionStorage.setItem('contacts', JSON.stringify(newContacts));
+        return newContacts;
+      }
+    };
+    return rejectWithValue('No user with such email exists');
+  }
+);
+
+
+export { getContacts, deleteContact, findContacts, addContact };

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { deleteContact, getContacts } from "../thunks/contactsThunk";
+import { addContact, deleteContact, findContacts, getContacts } from "../thunks/contactsThunk";
 
 const localContacts = window.sessionStorage.getItem('contacts');
 
@@ -20,8 +20,8 @@ const contactSlice = createSlice({
       .addCase(deleteContact.fulfilled, (state, action) => {
         return action.payload;
       })
-      .addCase(deleteContact.rejected, () => {
-        return [];
+      .addCase(addContact.fulfilled, (state, action) => {
+        return action.payload;
       })
   }
 })

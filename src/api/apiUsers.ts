@@ -8,30 +8,57 @@ class ApiUsers {
 
   private async updateUsers() {
     this.db = [];
-    const AuthInfo: User[] = await fetch('http://localhost:3001/users').then(res => res.json());
+    const AuthInfo: User[] = await fetch('http://localhost:3001/users').then(
+      (res) => res.json()
+    );
     AuthInfo.forEach((user) => {
       this.db.push(user);
     });
   }
 
-  async checkEmail(data: string) {
+  async findUsers(data: {id: string, email: string}) {
+    const { id, email } = data;
     await this.updateUsers();
-    const userExists = this.db.find((user) => user.email === data);
-    return !!userExists;
+    const matchingUsers = this.db.filter(
+      (user) => user.email.includes(email) && user.id !== id
+    );
+    if (matchingUsers.length > 0) {
+    const matchingList: UserOpenInfo[] = [];
+    matchingUsers.forEach(user => {
+      const userInfo = {
+        name: user.name,
+        surname: user.surname,
+        email: user.email
+      }
+      matchingList.push(userInfo);
+    })
+    return matchingList;
+    };
+    return false;
+  }
+
+  async checkEmail(email: string) {
+    await this.updateUsers();
+    const user = this.db.find((user) => user.email === email);
+    if (user) return {
+      email: user.email,
+      name: user.name,
+      surname: user.surname
+    } as UserOpenInfo;
+    return false;
   }
 
   async logInUser(data: AuthInfo) {
     await this.updateUsers();
-    const validUser = this.db.find((user) => 
-      user.email === data.email 
-      && user.password === data.password
+    const validUser = this.db.find(
+      (user) => user.email === data.email && user.password === data.password
     );
     if (validUser !== undefined) {
       return {
         email: validUser.email,
         id: validUser.id,
         name: validUser.name,
-        surname: validUser.surname
+        surname: validUser.surname,
       };
     }
   }
@@ -41,7 +68,7 @@ class ApiUsers {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Credentials': 'include',
+        Credentials: 'include',
       },
       body: JSON.stringify(data),
     });

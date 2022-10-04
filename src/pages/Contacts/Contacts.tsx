@@ -25,10 +25,6 @@ const Contacts = () => {
     }));
   };
 
-  const onSearchClick = () => {
-
-  }
-
   return (
     <div className={
       cn('container', {
@@ -37,7 +33,12 @@ const Contacts = () => {
       })
     }>
       <h2 className={styles.header}>Your contact list</h2>
-      { id && <SearchField theme={theme} onClick={ onSearchClick }/>}
+      { id && 
+        <>
+          <h3>Search by name</h3>
+          <SearchField theme={theme} />
+        </>
+      }
       {
         id ?
         myContacts.map((contact, index) => {

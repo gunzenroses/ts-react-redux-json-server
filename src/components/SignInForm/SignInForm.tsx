@@ -53,7 +53,11 @@ const SignInForm: FC<Props> = ({ theme }) => {
 
 
   return (
-    <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      autoComplete='off'
+      className={styles.container}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <h1
         className={cn('title', {
           title_light: theme === 'light',
@@ -72,7 +76,7 @@ const SignInForm: FC<Props> = ({ theme }) => {
       </p>
       <input
         {...register('email', {
-          required: 'Email is required'
+          required: 'Email is required',
         })}
         type='email'
         placeholder='Email'

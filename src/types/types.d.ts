@@ -15,6 +15,12 @@ type UserInfo = {
   surname: string;
 }
 
+type UserOpenInfo = {
+  email: string;
+  name: string;
+  surname: string;
+};
+
 type AuthInfo = {
   email: string;
   password: string;

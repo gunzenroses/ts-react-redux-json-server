@@ -5,7 +5,7 @@ const createUser = createAsyncThunk(
   'user/createUser',
   async (data: AuthInfo, { rejectWithValue }) => {
     const emailExists = await new ApiUsers().checkEmail(data.email);
-    if (emailExists) {
+    if (!!emailExists) {
       return rejectWithValue('Email already registered! Try another one');
     } else {
       const response = await new ApiUsers().addUser(data);
