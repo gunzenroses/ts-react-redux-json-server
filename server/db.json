@@ -3,49 +3,80 @@
     {
       "id": 1,
       "email": "john.doe@gmail.com",
-      "password": "123John"
+      "password": "123John",
+      "name": "John",
+      "surname": "Doe"
     },
     {
       "id": 2,
       "email": "mary.doe@gmail.com",
-      "password": "123Mary"
+      "password": "123Mary",
+      "name": "Mary",
+      "surname": "Doe"
     },
     {
       "id": 3,
-      "email": "sarah.doe@gmail.com",
-      "password": "Sarah123"
+      "email": "sarah.connohr@gmail.com",
+      "password": "Sarah123",
+      "name": "Sarah",
+      "surname": "Conner"
     },
     {
       "id": 4,
-      "email": "lilly.doe@gmail.com",
-      "password": "Lilly@Doe1"
+      "email": "lilly.smith@gmail.com",
+      "password": "Lilly@Doe1",
+      "name": "Lilly",
+      "surname": "Smith"
     },
     {
       "email": "helicopter@mail.com",
       "password": "helicopter123@",
-      "id": 5
+      "id": 5,
+      "name": "Heli",
+      "surname": "copter"
+    },
+    {
+      "email": "alice.marvel@doe.com",
+      "password": "alice123#",
+      "name": "Alice",
+      "surname": "Marvel",
+      "id": 6
     }
   ],
   "contacts": [
     {
       "id": 1,
-      "list": ["Mary Doe", "Sarah Doe"]
+      "list": [
+        "Mary Doe",
+        "Sarah Conner"
+      ]
     },
     {
       "id": 2,
-      "list": ["John Doe", "Sarah Doe"]
+      "list": [
+        "John Doe",
+        "Sarah Conner"
+      ]
     },
     {
       "id": 3,
-      "list": ["Mary Doe", "John Doe"]
+      "list": [
+        "Mary Doe",
+        "John Doe"
+      ]
     },
     {
       "id": 4,
-      "list": ["Mary Doe", "John Doe"]
+      "list": [
+        "Mary Doe",
+        "John Doe"
+      ]
     },
     {
       "id": 5,
-      "list": ["Mary Doe", "John Doe"]
+      "list": [
+        "Sarah Conner"
+      ]
     }
   ]
 }

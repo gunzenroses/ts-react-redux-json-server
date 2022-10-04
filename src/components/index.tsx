@@ -6,3 +6,5 @@ export { SignInForm } from "./SignInForm/SignInForm";
 export { Header } from './Header/Header';
 export { Footer } from './Footer/Footer';
 export { TextInfo } from './TextInfo/TextInfo';
+export { Contact } from './Contact/Contact';
+export { SearchField } from './SearchField/SearchField';

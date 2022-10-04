@@ -28,7 +28,9 @@ const RegistrationForm: FC<Props> = ({ theme }) => {
   const onSubmit = (data: FieldValues) => {
     const email: string = data.email.trim().toLowerCase();
     const password: string = data.password.trim();
-    const updData = { email, password };
+    const name: string = data.name.trim();
+    const surname: string = data.surname.trim();
+    const updData = { email, password, name, surname };
 
     dispatch(createUser(updData))
       .then((response) => {
@@ -98,6 +100,46 @@ const RegistrationForm: FC<Props> = ({ theme }) => {
       <ErrorMessage
         errors={errors}
         name='password'
+        render={({ message }) => (
+          <CustomErrorMessage theme={theme} message={message} />
+        )}
+      />
+      <input
+        {...register('name', {
+          required: 'Add name',
+          pattern: {
+            value: /([A-Za-z]{2,})/,
+            message: 'Must be longer than 2 letters',
+          },
+        })}
+        type='text'
+        placeholder='name'
+        className={styles.input}
+        autoComplete='new-password'
+      />
+      <ErrorMessage
+        errors={errors}
+        name='name'
+        render={({ message }) => (
+          <CustomErrorMessage theme={theme} message={message} />
+        )}
+      />
+      <input
+        {...register('surname', {
+          required: 'Add surname',
+          pattern: {
+            value: /([A-Za-z]{2,})/,
+            message: 'Must be longer than 2 letters',
+          },
+        })}
+        type='text'
+        placeholder='surname'
+        className={styles.input}
+        autoComplete='new-password'
+      />
+      <ErrorMessage
+        errors={errors}
+        name='surname'
         render={({ message }) => (
           <CustomErrorMessage theme={theme} message={message} />
         )}

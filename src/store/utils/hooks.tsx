@@ -17,8 +17,8 @@ export const useTheme = () => {
 }
 
 export const useAuth = () => {
-  const authInfo = useMySelector((state: MyState) => state.user);
-  return authInfo;
+  const UserInfo = useMySelector((state: MyState) => state.user);
+  return UserInfo;
 }
 
 export const useContacts = () => {

@@ -1,0 +1,65 @@
+@import 'utils/vars.scss';
+
+$heightBlock: 70px;
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  height: $heightBlock;
+  width: 320px;
+}
+
+.field {
+  display: block;
+  width: 260px;
+  height: $heightBlock;
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+  border: none;
+  border-radius: 0 0 0 25px;
+  outline: none;
+  font-family: $fontSecondary;
+  font-size: $fontSizeSubtitle;
+  line-height: $heightBlock;
+  color: $colorTextLight;
+
+  &_light {
+    background-color: $colorDark;
+  }
+
+  &_dark {
+    background-color: $colorLightLess;
+  }
+
+  &_light:focus,
+  &_dark:focus {
+    background-color: $colorDarkLess;
+  }
+}
+
+.button {
+  display: block;
+  width: 60px;
+  height: $heightBlock;
+  padding: 0;
+  border: none;
+  border-radius: 0 25px 0 0;
+  text-align: center;
+  line-height: $heightBlock;
+  font-family: $fontMain;
+  font-size: $fontSizeTitle;
+  user-select: none;
+  background-color: $colorImportant;
+  background-image: url('../../assets/images/search.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &:hover,
+  &:active {
+    background-color: $colorImportantLight;
+  }
+}

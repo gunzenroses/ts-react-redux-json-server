@@ -14,12 +14,12 @@ type Props = {
 const UserMenu: FC<Props> = ({
   theme
 }) => {
-  const authInfo: AuthInfo = useAuth();
+  const UserInfo: UserInfo = useAuth();
   const dispatch = useMyDispatch();
   const navigate = useNavigate();
 
   const onPointerUp = () => {
-    const storageData = window.sessionStorage.getItem('authInfo');
+    const storageData = window.sessionStorage.getItem('UserInfo');
     const data = storageData ? JSON.parse(storageData) : {};
     dispatch(signOut(data))
     .then(() => {
@@ -32,7 +32,7 @@ const UserMenu: FC<Props> = ({
   
   return (
     <div className={styles.container}>
-      {authInfo.id ? (
+      {UserInfo.id ? (
         <>
           <CustomLink text='Contacts' theme={theme} />
           <Button
@@ -53,7 +53,7 @@ const UserMenu: FC<Props> = ({
           <Button 
             text='Sign in' 
             theme={theme} 
-            href='/how-so'
+            href='/sign-in'
             type='button'
           />
         </>

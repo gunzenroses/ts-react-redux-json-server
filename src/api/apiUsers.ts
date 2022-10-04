@@ -8,8 +8,8 @@ class ApiUsers {
 
   private async updateUsers() {
     this.db = [];
-    const userInfo: User[] = await fetch('http://localhost:3001/users').then(res => res.json());
-    userInfo.forEach((user) => {
+    const AuthInfo: User[] = await fetch('http://localhost:3001/users').then(res => res.json());
+    AuthInfo.forEach((user) => {
       this.db.push(user);
     });
   }
@@ -20,7 +20,7 @@ class ApiUsers {
     return !!userExists;
   }
 
-  async logInUser(data: UserInfo) {
+  async logInUser(data: AuthInfo) {
     await this.updateUsers();
     const validUser = this.db.find((user) => 
       user.email === data.email 
@@ -30,11 +30,13 @@ class ApiUsers {
       return {
         email: validUser.email,
         id: validUser.id,
+        name: validUser.name,
+        surname: validUser.surname
       };
     }
   }
 
-  async addUser(data: UserInfo) {
+  async addUser(data: AuthInfo) {
     await fetch('http://localhost:3001/users', {
       method: 'post',
       headers: {
@@ -43,7 +45,7 @@ class ApiUsers {
       },
       body: JSON.stringify(data),
     });
-    return (await this.logInUser(data)) as AuthInfo;
+    return (await this.logInUser(data)) as UserInfo;
   }
 
   deleteUser(id: string) {

@@ -1,4 +1,5 @@
 module '*.scss';
+module '*.svg';
 
 declare module '*.png' {
   const value: any;
@@ -7,19 +8,21 @@ declare module '*.png' {
 
 type Theme = 'dark' | 'light';
 
-type AuthInfo = {
+type UserInfo = {
   id: string;
   email: string;
+  name: string;
+  surname: string;
 }
 
-type UserInfo = {
+type AuthInfo = {
   email: string;
   password: string;
 };
 
 type User = UserInfo & {
-  id: string
-}
+  password: string;
+};
 
 type Contact = {
   id: string;
