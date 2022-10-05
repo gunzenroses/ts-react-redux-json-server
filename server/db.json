@@ -73,10 +73,12 @@
       ]
     },
     {
-      "id": 5,
       "list": [
-        "Sarah Conner"
-      ]
+        "John Doe",
+        "Sarah Conner",
+        "Mary Doe"
+      ],
+      "id": 5
     }
   ]
 }

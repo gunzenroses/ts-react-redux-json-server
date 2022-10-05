@@ -46,21 +46,29 @@ const findContacts = createAsyncThunk(
 
 const addContact = createAsyncThunk(
   'user/addContact',
-  async (data: { id: string, email: string }, { rejectWithValue }) => {
-    const {id, email} = data;
-    const user = await new ApiUsers().checkEmail(email);
-    if (!!user) {
-      const contactName = `${user.name} ${user.surname}`;
-      const contacts = await new Contacts().getContacts(id);
-      const contactExists = contacts.find(contact => contact === contactName);
+  async (
+    data: { userId: string; emailOfNewContact: string },
+    { rejectWithValue }
+  ) => {
+    const { userId, emailOfNewContact } = data;
+    const newContact = await new ApiUsers().checkEmail(emailOfNewContact);
+    if (!!newContact) {
+      const newContactName = `${newContact.name} ${newContact.surname}`;
+      const userContacts = await new Contacts().getContacts(userId);
+      const contactExists = userContacts.find(
+        (contact) => contact === newContactName
+      );
       if (!!contactExists) {
         return rejectWithValue('Already in a contact list');
       } else {
-        const newContacts = await new Contacts().addContact({id: id, contactName: contactName});
-        window.sessionStorage.setItem('contacts', JSON.stringify(newContacts));
-        return newContacts;
+        const updContacts = await new Contacts().addContact({
+          id: userId,
+          newContactName: newContactName,
+        });
+        window.sessionStorage.setItem('contacts', JSON.stringify(updContacts));
+        return updContacts;
       }
-    };
+    }
     return rejectWithValue('No user with such email exists');
   }
 );

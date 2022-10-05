@@ -20,18 +20,18 @@ class Contacts {
     return this.db;
   }
 
-  async addContact(data: {id: string, contactName: string}) {
-    const { id, contactName } = data;
-    // await this.updateContacts(id);
-    // const list: string[] = this.db.push(contactName);
-    await fetch(`https://localhost:3001/contacts/${id}`, {
-      method: 'PATCH',
+  async addContact(data: {id: string, newContactName: string}) {
+    const { id, newContactName } = data;
+    await this.updateContacts(id);
+    const list: string[] = [...this.db, newContactName];
+    await fetch(`http://localhost:3001/contacts/${id}`, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Credentials': 'include'
+        'Credentials': 'include',
       },
-      body: JSON.stringify(contactName)
-    })
+      body: JSON.stringify({ list: list }),
+    });
     return this.getContacts(id);
   }
 
@@ -45,7 +45,7 @@ class Contacts {
         'Content-Type': 'application/json',
         'Credentials': 'include',
       },
-      body: JSON.stringify({list: list}),
+      body: JSON.stringify({ list: list }),
     });
     return this.getContacts(id);
   }
