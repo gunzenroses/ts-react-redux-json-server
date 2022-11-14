@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# ts-react-redux
 
 The aim of this project is to make an app with 2 pages:
 - signin page;
